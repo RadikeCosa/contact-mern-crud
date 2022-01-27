@@ -5,10 +5,11 @@ import axios from "axios";
 function DetailsCard() {
 	const [contact, setContact] = useState([]);
 	const { id } = useParams();
+	const api = "https://api-contact-radike.herokuapp.com/api/contacts";
 
 	useEffect(() => {
 		const getContact = async () => {
-			const res = await axios.get("http://localhost:8080/api/contacts/" + id);
+			const res = await axios.get(api + "/" + id);
 			setContact(res.data);
 		};
 		getContact();

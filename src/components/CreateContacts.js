@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 const CreateContacts = () => {
+	const api = "https://api-contact-radike.herokuapp.com/api/contacts";
 	const initialForm = {
 		name: "",
 		surname: "",
@@ -37,7 +38,7 @@ const CreateContacts = () => {
 			diagnosis: contact.diagnosis,
 			financier: contact.financier,
 		};
-		await axios.post("http://localhost:8080/api/contacts", newContact);
+		await axios.post(api, newContact);
 
 		setContact({ ...initialForm });
 	};
@@ -55,18 +56,13 @@ const CreateContacts = () => {
 			financier: contact.financier,
 		};
 		console.log(updatedContact);
-		await axios.put(
-			"http://localhost:8080/api/contacts/" + dataToEdit,
-			updatedContact
-		);
+		await axios.put(api + "/" + dataToEdit, updatedContact);
 		setContact({ ...initialForm });
 		setDataToEdit("");
 	};
 
 	const getOne = async (valorId) => {
-		const res = await axios.get(
-			"http://localhost:8080/api/contacts/" + valorId
-		);
+		const res = await axios.get(api + "/" + valorId);
 		setContact({
 			name: res.data.name,
 			surname: res.data.surname,

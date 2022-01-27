@@ -3,11 +3,12 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const ContactList = () => {
+	const api = "https://api-contact-radike.herokuapp.com/api/contacts";
 	const [contactList, setContactList] = useState([]);
 
 	useEffect(() => {
 		const getContacts = async () => {
-			const res = await axios.get("http://localhost:8080/api/contacts");
+			const res = await axios.get(api);
 			setContactList(res.data);
 		};
 		getContacts();

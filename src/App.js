@@ -4,7 +4,7 @@ import Nav from "./components/Nav";
 import ContactList from "./components/ContactList";
 import CreateContacts from "./components/CreateContacts";
 import DetailsCard from "./components/DetailsCard";
-
+import Footer from "./components/Footer";
 function App() {
 	return (
 		<div className="">
@@ -17,6 +17,7 @@ function App() {
 					<Route path="/details/:id" element={<DetailsCard />} />
 				</Routes>
 			</div>
+			<Footer />
 		</div>
 	);
 }

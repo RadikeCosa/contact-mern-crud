@@ -4,7 +4,7 @@ export default class Footer extends Component {
 	render() {
 		return (
 			<div>
-				<div class="container">
+				<div className="container">
 					<footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
 						<div className="col-md-4 d-flex align-items-center">
 							<a
@@ -18,7 +18,7 @@ export default class Footer extends Component {
 							<li className="ms-3">
 								<a className="text-muted" href="#"></a>
 							</li>
-							<li class="ms-3">
+							<li className="ms-3">
 								<a className="text-muted" href="#"></a>
 							</li>
 							<li className="ms-3">

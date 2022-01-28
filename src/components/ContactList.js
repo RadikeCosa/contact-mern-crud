@@ -15,7 +15,7 @@ const ContactList = () => {
 	}, [contactList]);
 
 	const deleteContact = async (id) => {
-		await axios.delete("http://localhost:8080/api/contacts/" + id);
+		await axios.delete(api + "/" + id);
 	};
 
 	return (
